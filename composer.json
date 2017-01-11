@@ -1,0 +1,28 @@
+{
+    "name": "alc/guzzle-helper",
+    "type": "library",
+    "keywords": ["guzzle", "helper", "simple", "curl"],
+    "homepage": "https://github.com/chemel/guzzle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alexis CHEMEL",
+            "homepage": "https://github.com/chemel",
+            "email": "github@chemel.fr"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+        	"Alc\\Guzzle\\": "src/"
+        }
+    },
+    "require": {
+        "guzzlehttp/guzzle": "^6.2",
+        "alc/http-headers": "^1.0"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}
