@@ -2,9 +2,9 @@
 
 require __DIR__.'/../vendor/autoload.php';
 
-use Alc\Guzzle\Guzzle;
+use Alc\Guzzle\GuzzleHelper;
 
-$client = new Guzzle();
+$client = new GuzzleHelper();
 
 $response = $client->get('http://httpbin.org/get');
 var_dump($response->getStatusCode());

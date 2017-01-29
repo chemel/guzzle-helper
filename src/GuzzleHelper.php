@@ -4,7 +4,7 @@ namespace Alc\Guzzle;
 
 use Alc\HttpHeaders\HttpHeaders;
 
-class Guzzle
+class GuzzleHelper
 {
     protected $httpHeaders;
 
