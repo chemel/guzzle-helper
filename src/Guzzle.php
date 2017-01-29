@@ -6,7 +6,7 @@ use Alc\HttpHeaders\HttpHeaders;
 
 class Guzzle
 {
-    protected $httpheaders;
+    protected $httpHeaders;
 
     protected $client;
 
@@ -17,7 +17,7 @@ class Guzzle
      */
     public function __construct()
     {
-        $this->httpheaders = new HttpHeaders();
+        $this->httpHeaders = new HttpHeaders();
         $this->setOptions($this->getDefaultOptions());
         $this->useChrome();
     }
@@ -94,13 +94,23 @@ class Guzzle
     }
 
     /**
+     * Reset Client
+     *
+     * @return Client client
+     */
+    public function resetClient()
+    {
+        $this->client = null;
+    }
+
+    /**
      * Use HTTP headers
      *
      * @param string name
      */
     public function useHeaders($name)
     {
-        $headers = $this->httpheaders->getHeaders($name);
+        $headers = $this->httpHeaders->getHeaders($name);
 
         $this->mergeOptions(array('headers' => $headers));
     }
@@ -110,7 +120,7 @@ class Guzzle
      */
     public function useChrome()
     {
-        $headers = $this->httpheaders->getChrome();
+        $headers = $this->httpHeaders->getChrome();
 
         $this->mergeOptions(array('headers' => $headers));
     }
@@ -120,7 +130,7 @@ class Guzzle
      */
     public function useFirefox()
     {
-        $headers = $this->httpheaders->getFirefox();
+        $headers = $this->httpHeaders->getFirefox();
 
         $this->mergeOptions(array('headers' => $headers));
     }
