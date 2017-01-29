@@ -12,8 +12,6 @@ class Guzzle
 
     protected $options = array();
 
-    protected $response;
-
     /**
      * Constructor
      */
@@ -139,9 +137,7 @@ class Guzzle
     {
         $client = $this->getClient();
 
-        $this->response =  $client->request('GET', $url, array('query' => $data));
-
-        return $this->response->getBody()->getContents();
+        return $client->request('GET', $url, array('query' => $data));
     }
 
     /**
@@ -156,18 +152,6 @@ class Guzzle
     {
         $client = $this->getClient();
 
-        $this->response =  $client->request('POST', $url, array('form_params' => $data));
-
-        return $this->response->getBody()->getContents();
-    }
-
-    /**
-     * Get last response
-     *
-     * @return Response response
-     */
-    public function getResponse()
-    {
-        return $this->response;
+        return $client->request('POST', $url, array('form_params' => $data));
     }
 }

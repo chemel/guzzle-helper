@@ -6,12 +6,13 @@ use Alc\Guzzle\Guzzle;
 
 $client = new Guzzle();
 
-$content = $client->get('http://httpbin.org/get');
-var_dump($content);
+$response = $client->get('http://httpbin.org/get');
+var_dump($response->getStatusCode());
+var_dump($response->getBody()->getContents());
 
 $client->useFirefox();
-$content = $client->get('http://httpbin.org/get');
-var_dump($content);
+$response = $client->get('http://httpbin.org/get');
+var_dump($response->getBody()->getContents());
 
-$content = $client->post('http://httpbin.org/post', array('foo' => 'bar'));
-var_dump($content);
+$response = $client->post('http://httpbin.org/post', array('foo' => 'bar'));
+var_dump($response->getBody()->getContents());
