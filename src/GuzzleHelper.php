@@ -54,7 +54,7 @@ class GuzzleHelper
      */
     public function mergeOptions($options)
     {
-        $this->setOptions($this->getOptions() + $options);
+        $this->setOptions(array_merge($this->getOptions(), $options));
     }
 
     /**
